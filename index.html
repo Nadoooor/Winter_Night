@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winter_Night</title>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script> 
+    <script src="https://unpkg.com/aframe-environment-component@1.5.x/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.6.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/MozillaReality/ammo.js@8bbc0ea/builds/ammo.wasm.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.3/dist/aframe-physics-system.js"></script>
+    
+</head>
+<body>
+    <a-scene physics="driver: ammo; debug:true; gravity: 0 -9.8 0">
+        <a-entity camera position="0.6 2 0" wasd-controls="acceleration: 200; fly: true" look-controls=""></a-entity>
+
+        <a-assets>
+            <a-asset-item id="floor" src="Floor.glb"></a-asset-item>
+        </a-assets>
+        <!-- #region floor -->
+        <a-entity>
+        <a-entity environment="ground: none; skytype" ></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="0.6 0 0"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="48 0 0"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-48 0 0"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="96 0 0"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-96 0 0"></a-entity>
+
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4"ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2"   scale="5 5 5" position="0.6 0 44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4"ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2"   scale="5 5 5" position="48 0 44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4"ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2"   scale="5 5 5" position="-48 0 44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4"ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2"   scale="5 5 5" position="96 0 44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4"ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2"   scale="5 5 5" position="-96 0 44"></a-entity>
+
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2"  scale="5 5 5" position="0.6 0    -44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="48 0   -44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-48  0 -44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="96 0   -44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-96  0 -44"></a-entity>
+
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="0.6 0 88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="48 0 88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-48 0 88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="96 0 88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-96 0 88"></a-entity>
+
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="0.6 0 -88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="48 0 -88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-48 0 -88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="96 0 -88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-96 0 -88"></a-entity>
+        </a-entity>
+
+        <!-- #endregion floor -->
+
+
+    </a-scene>   
+</body>
+</html>
