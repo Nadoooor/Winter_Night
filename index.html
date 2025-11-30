@@ -17,10 +17,12 @@
 
         <a-assets>
             <a-asset-item id="floor" src="Floor.glb"></a-asset-item>
+            <img src="Wall.png" id="wall"> </img>
         </a-assets>
+        <a-entity environment="ground: none; fog: 0.5; skyType: gradient; skyColor: blue; horizonColor; rgb(77,89,179); lighting: point; lightPosition: 0 2 0 " ></a-entity>
         <!-- #region floor -->
         <a-entity>
-        <a-entity environment="ground: none; skytype" ></a-entity>
+        
         <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="0.6 0 0"></a-entity>
         <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="48 0 0"></a-entity>
         <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-48 0 0"></a-entity>
@@ -52,9 +54,46 @@
         <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-96 0 -88"></a-entity>
         </a-entity>
 
+        
+
         <!-- #endregion floor -->
 
+        <!-- #region wall -->
+        <a-entity>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 -2"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 -47"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 43"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 88"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 -92"></a-box>
+        </a-entity>
+        <a-entity position="-238 0 0">
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 -2"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 -47"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 43"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 88"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 -92"></a-box>
+        </a-entity>
 
+        <a-entity position="0 0 7" rotation="0 90 0">
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 -2"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 -47"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 43"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 88"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119.5 0 97"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 -92"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119.5 0 -97"></a-box>
+        </a-entity>
+
+        <a-entity position="0 0 228" rotation="0 90 0">
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 -2"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 -47"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 43"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 88"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119.5 0 97"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119 0 -92"></a-box>
+            <a-box material="src: #wall" scale="1 35 45" position="119.5 0 -97"></a-box>
+        </a-entity>
+      <!--  #endregion wall -->
     </a-scene>   
 </body>
 </html>
