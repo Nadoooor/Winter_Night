@@ -18,8 +18,9 @@
         <a-assets>
             <a-asset-item id="floor" src="Floor.glb"></a-asset-item>
             <img src="Wall.png" id="wall"> </img>
+            <a-asset-item src="Trees.glb" id="tree"></a-asset-item>
         </a-assets>
-        <a-entity environment="ground: none; fog: 0.5; skyType: gradient; skyColor: blue; horizonColor; rgb(77,89,179); lighting: point; lightPosition: 0 2 0 " ></a-entity>
+        <a-entity environment="ground: none; fog: 0.5; skyType: gradient; skyColor: blue; horizonColor; rgb(77,89,179); lighting: point; lightPosition: 0 9 0; stageSize: 500 " ></a-entity>
         <!-- #region floor -->
         <a-entity>
         
@@ -57,7 +58,6 @@
         
 
         <!-- #endregion floor -->
-
         <!-- #region wall -->
         <a-entity>
             <a-box material="src: #wall" scale="1 35 45" position="119 0 -2"></a-box>
@@ -94,6 +94,86 @@
             <a-box material="src: #wall" scale="1 35 45" position="119.5 0 -97"></a-box>
         </a-entity>
       <!--  #endregion wall -->
+        <!-- #region Trees -->
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-45.4  -4 -10.6"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="26.7   -4 36.6"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-30.0  -4 95.8"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="35.3   -4 44.2"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="65.8   -4 37.6"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="77.8   -4 -47.0"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-49.3  -4 -66.5"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="9.0    -4 -55.9"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-1.5   -4 -13.6"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="20.7   -4 -53.4"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-89.3  -4 -51.8"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-87.3  -4 -20.6"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="4.2    -4 80.5"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="31.8   -4 62.6"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-88.6  -4 18.5"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="76.1   -4 -16.4"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="49.9   -4 -34.8"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="98.1   -4 39.8"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="52.2   -4 21.0"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-40.7  -4 9.2"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-78.2  -4 89.6"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-47.9  -4 44.5"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="43.2   -4  91.5"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="19.1   -4 -77.7"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="80.6   -4 -90.6"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="91.5   -4 72.8"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-34.8  -4 -52.8"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="20.7   -4 38.6"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="27.0   -4 -15.4"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="68.8   -4 -58.4"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-97.1  -4 -6.4"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="8.7    -4 -82.6"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-74.1  -4 13.9"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-98.9  -4 -98.3"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-51.5  -4 28.5"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="29.0   -4 99.3"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="56.1   -4 -4.0"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-42.4  -4 -14.3"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="75.2   -4 19.3"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="71.7   -4 57.0"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-67.4  -4 -36.6"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="1.1    -4 -27.6"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="8.7    -4 17.0"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="20.5   -4 6.9"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="37.3   -4 -84.3"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-96.8  -4 62.0"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-71.3  -4 -90.5"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="10.8   -4 59.9"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="-1.5   -4 36.3"></a-entity>
+        <a-entity gltf-model="#tree" scale="5 5 5" position="36.7   -4 14.5"></a-entity>
+        <!-- #endregion Tree -->
+        <!-- #region Control-Panal -->
+        <a-entity material="color: black; opacity: 0.7" geometry="primitive: box; height: 6; width: 6; depth: 0.2" position="0 5 -10">
+            <a-text value="Control-Panal" align="Center" scale="0.02 -0.02 0.02" position="-2.6 1.5 0"></a-text>
+            <a-text value="Control-Panal" align="Center" scale="0.02 -0.02 -0.02" position="-2.6 1.5 0"></a-text>
+
+            <a-box light+     position="2 0 0" scale="0.5 0.5 0.5">
+                <a-text value="Light +" align="Center" scale="0.02 -0.02 0.02" position="-1 1 0"></a-text>
+            </a-box>
+            <a-box light-     position="2 -2 0" scale="0.5 0.5 0.5">
+                <a-text value="Light -" align="Center" scale="0.02 -0.02 0.02" position="-1 1 0"></a-text>
+            </a-box>
+            <a-box music+     position="0 0 0" scale="0.5 0.5 0.5">
+                <a-text value="Music +" align="Center" scale="0.02 -0.02 0.02" position="-1.3 1 0"></a-text>
+            </a-box>
+            <a-box music-     position="0 -2 0" scale="0.5 0.5 0.5">
+                <a-text value="Music -" align="Center" scale="0.02 -0.02 0.02" position="-1.3 1 0"></a-text>
+
+            </a-box>
+            <a-box flashlight position="-2 0 0" scale="0.5 0.5 0.5">
+                <a-text value="FL" align="Center" scale="0.02 -0.02 0.02" position="-0.7 1 0"></a-text>
+
+            </a-box>
+            <a-box spawn      position="-2 -2 0" scale="0.5 0.5 0.5">
+                <a-text value="SB" align="Center" scale="0.02 -0.02 0.02" position="-0.7 1 0"></a-text>
+            </a-box>
+
+            
+        </a-entity>
     </a-scene>   
 </body>
 </html>
