@@ -103,13 +103,23 @@ AFRAME.registerComponent('music-', {
         });
     },
 
-
 });
 
 AFRAME.registerComponent('spawn', {
     init: function () {
         this.el.addEventListener('click', () => {
-            
+            const ball = document.createElement('a-entity');
+            ball.setAttribute('geometry', { primitive: 'sphere', radius: 0.5 });
+            ball.setAttribute('material', { color: 'white' });
+            ball.setAttribute('grap', '');
+            ball.setAttribute('ammo-body', { type: 'dynamic', gravity: '0 -9.8 0' });
+            ball.setAttribute('ammo-shape', { type: 'sphere'});
+            ball.setAttribute('position', '0 1 -2');
+            ball.setAttribute('class', 'clickable');
+            this.el.sceneEl.appendChild(ball);
         });
     },
 });
+
+
+

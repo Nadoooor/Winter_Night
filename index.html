@@ -11,16 +11,17 @@
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.3/dist/aframe-physics-system.js"></script>
     
     <script src="controlpanal.js"></script>
+    <script src="grap.js"></script>
 </head>
 <body>
-    <a-scene physics="driver: ammo; debug:true; gravity: 0 -9.8 0">
-        <a-entity id="camera" camera position="0.6 2 0" wasd-controls="acceleration: 200; fly: false" look-controls="">
+    <a-scene physics="driver: ammo; debug:false ; gravity: 0 -9.8 0">
+        <a-entity id="camera" camera position="0.6 3 0" wasd-controls="acceleration: 200; fly: false" look-controls="">
             <a-entity geometry="type: box" ammo-body="type: kinematic" ammo-shape="type: box"></a-entity>
             <a-entity raycaster="objects: .clickable; showLine: true" cursor="" id="curs" material="shader: flat; color: red" position="0 0 -0.5" geometry="primitive: circle; radius: 0.005" line="end: 0 0 -190.62483055930616; color: white"></a-entity>
             <a-entity id="flash" light="type: spot; intensity: 0; distance: 30" position="0 -1 -2"></a-entity>
         </a-entity>
 
-        <a-entity geometry="primitive: sphere;" material="color: white" ammo-body="type: dynamic; gravity: 0 -9.8 0" ammo-shape="type: sphere" position="2 1 2"></a-entity>
+        <a-entity class="clickable" geometry="primitive: sphere;" grap material="color: white" ammo-body="type: dynamic; gravity: 0 -9.8 0; linearDamping: 0.5" ammo-shape="type: sphere" position="2 1 2"></a-entity>
 
         <a-assets>
             <a-asset-item id="floor" src="Floor.glb"></a-asset-item>
@@ -30,41 +31,41 @@
             <audio src="Music.mp3" autoplay id="music"></audio>
         </a-assets>
 
-        <a-entity gltf-model="#camp" scale="0.5 0.5 0.5"></a-entity>
+        <a-entity gltf-model="#camp" scale="0.5 0.5 0.5" position="0 0 3"></a-entity>
         <a-entity id="Light" position="0 4 0" light="type: point; intensity: 1"></a-entity>
         <a-entity environment="ground: none; fog: 0.5; skyType: color; skyColor: #05073a; lighting: none; lightPosition: 0 9 0; stageSize: 500 " ></a-entity>
         <!-- #region floor -->
         <a-entity>
         
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="0.6 0 0"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="48 0 0"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-48 0 0"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="96 0 0"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-96 0 0"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="0.6 0 0"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="48 0 0"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="-48 0 0"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="96 0 0"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="-96 0 0"></a-entity>
 
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4"ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2"   scale="5 5 5" position="0.6 0 44"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4"ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2"   scale="5 5 5" position="48 0 44"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4"ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2"   scale="5 5 5" position="-48 0 44"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4"ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2"   scale="5 5 5" position="96 0 44"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4"ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2"   scale="5 5 5" position="-96 0 44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4"ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2"   scale="5 5 5" position="0.6 0 44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4"ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2"   scale="5 5 5" position="48 0 44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4"ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2"   scale="5 5 5" position="-48 0 44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4"ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2"   scale="5 5 5" position="96 0 44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4"ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2"   scale="5 5 5" position="-96 0 44"></a-entity>
 
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2"  scale="5 5 5" position="0.6 0    -44"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="48 0   -44"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-48  0 -44"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="96 0   -44"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-96  0 -44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2"  scale="5 5 5" position="0.6 0    -44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="48 0   -44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="-48  0 -44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="96 0   -44"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="-96  0 -44"></a-entity>
 
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="0.6 0 88"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="48 0 88"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-48 0 88"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="96 0 88"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-96 0 88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="0.6 0 88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="48 0 88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="-48 0 88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="96 0 88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="-96 0 88"></a-entity>
 
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="0.6 0 -88"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="48 0 -88"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-48 0 -88"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="96 0 -88"></a-entity>
-        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 0 -2" scale="5 5 5" position="-96 0 -88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="0.6 0 -88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="48 0 -88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="-48 0 -88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="96 0 -88"></a-entity>
+        <a-entity gltf-model="#floor" rotation="0.6 0 -4" ammo-body="type: static" ammo-shape="type: hull; offset: -2 -1 -2" scale="5 5 5" position="-96 0 -88"></a-entity>
         </a-entity>
 
         
@@ -72,38 +73,38 @@
         <!-- #endregion floor -->
         <!-- #region wall -->
         <a-entity>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 -2"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 -47"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 43"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 88"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 -92"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 -2"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 -47"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 43"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 88"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 -92"></a-box>
         </a-entity>
         <a-entity position="-238 0 0">
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 -2"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 -47"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 43"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 88"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 -92"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 -2"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 -47"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 43"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 88"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 -92"></a-box>
         </a-entity>
 
         <a-entity position="0 0 7" rotation="0 90 0">
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 -2"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 -47"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 43"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 88"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119.5 0 97"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 -92"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119.5 0 -97"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 -2"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 -47"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 43"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 88"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119.5 0 97"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 -92"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119.5 0 -97"></a-box>
         </a-entity>
 
         <a-entity position="0 0 228" rotation="0 90 0">
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 -2"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 -47"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 43"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 88"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119.5 0 97"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119 0 -92"></a-box>
-            <a-box material="src: #wall" scale="1 35 45" position="119.5 0 -97"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 -2"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 -47"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 43"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 88"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119.5 0 97"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119 0 -92"></a-box>
+            <a-box material="src: #wall" ammo-body="type: static" ammo-shape="type: box" scale="1 35 45" position="119.5 0 -97"></a-box>
         </a-entity>
       <!--  #endregion wall -->
         <!-- #region Trees -->
@@ -180,10 +181,11 @@
                 <a-text value="FL" align="Center" scale="0.02 -0.02 0.02" position="-0.7 1 0"></a-text>
 
             </a-box>
-            <a-box spawn      position="-2 -2 0" scale="0.5 0.5 0.5">
+            <a-box spawn   class="clickable"   position="-2 -2 0" scale="0.5 0.5 0.5">
                 <a-text value="SB" align="Center" scale="0.02 -0.02 0.02" position="-0.7 1 0"></a-text>
             </a-box>
         </a-entity>
+        <!-- #endregion control-panal -->
     </a-scene>   
 </body>
 </html>
